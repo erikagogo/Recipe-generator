@@ -1,12 +1,25 @@
-function generateRecipe(event) {
-  event.preventDefault();
-
+function showRecipe(response) {
+  console.log("poem generated");
   new Typewriter("#recipe", {
-    strings: "Make the dressing but leave in a separate small bowl...",
+    strings: response.data.answer,
     autoStart: true,
     delay: 1,
     cursor: "",
   });
+}
+function generateRecipe(event) {
+  event.preventDefault();
+  let instructionsInput = document.querySelector("#user-instructions");
+  let apiKey = "fcb5b04c3b01oef210621t20e3aeda2f";
+  let context =
+    "You are a food expert and have vast knowledge of various amazing recipes. Your goal is to generate simple recipes in only a few sentences";
+  let prompt = `Please generate a recipe about ${instructionsInput.value}`;
+  let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+  console.log("generating recipe...");
+  console.log(`Prompt: ${prompt}`);
+  console.log(`Context:${context}`);
+  axios.get(apiUrl).then(showRecipe);
 }
 
 let poemFormElement = document.querySelector("#poem-generator-form");

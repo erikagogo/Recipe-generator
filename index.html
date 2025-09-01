@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <title>AI Food Recipe Generator</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -12,7 +13,7 @@
         <h1>AI Food Recipe Generator</h1>
       </header>
       <main>
-        <form action="">
+        <form id="poem-generator-form">
           <input
             type="text"
             placeholder="Enter food name"
@@ -24,20 +25,7 @@
           <input type="submit" class="submit-button" />
         </form>
         <br />
-        <div class="recipe">
-          Mexican-Style Salad
-          <p>
-            Ingredients 1x 2x 3x ▢1 Red pepper ▢1 Yellow pepper ▢1 Large Red
-            onions, Or 2 small ▢340 g (11 oz) Sweetcorn, Drained ▢200 g (7 oz)
-            Salsa, The fresh kind, from the fridge ▢400 g (15 oz) Black beans,
-            Drained and rinsed ▢Jalapeños, To taste
-          </p>
-          <p>
-            Instructions Chop everything and add to the bowl. Make the dressing
-            but leave in a separate small bowl or jug. Add just before serving
-            and mix well. Sprinkle tortilla chips and feta on top.
-          </p>
-        </div>
+        <div class="recipe" id="recipe"></div>
       </main>
       <footer>
         This AI project was coded by
